@@ -1,1 +1,5 @@
 /sprint_checkpoints.sqlite
+*/pycache/
+*/__pycache__/
+venv/
+*.pyc
