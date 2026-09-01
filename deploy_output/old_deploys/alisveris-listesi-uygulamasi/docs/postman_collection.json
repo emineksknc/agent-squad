@@ -1,0 +1,47 @@
+{
+  "info": {
+    "name": "Alışveriş Listesi Uygulaması API",
+    "description": "Otomatik üretildi (agent-squad sprint_documenter). Backend dev_notes'undaki API kontratlarına göre — endpoint/method detaylarını Postman'da elle düzeltmen gerekebilir, bu bir başlangıç noktası.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "T-1 — Flask ile kullanıcı kaydı ve giriş için CRUD endpoint'lerini",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5050",
+          "host": [
+            "http://localhost:5050"
+          ]
+        },
+        "description": "API kontratları:\n- POST /register: username, email, password\n- POST /login: username, password\n- POST /logout: No request body required\n\nFrontend'in ana HTML dosyasını servis etmek için GET / route'una render_template('index.html') eklenmelidir."
+      }
+    },
+    {
+      "name": "T-3 — Flask ile alışveriş listesi oluşturma ve düzenleme için CRUD",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5050",
+          "host": [
+            "http://localhost:5050"
+          ]
+        },
+        "description": "API kontratları:\n- POST /list: {'name': 'string'}\n- PUT /list: {'id': 'integer', 'name': 'string'}\n- DELETE /list: {'id': 'integer'}\n\nFrontend'in ana HTML dosyasını servis etmek için GET '/' route'unu ekledim."
+      }
+    }
+  ]
+}

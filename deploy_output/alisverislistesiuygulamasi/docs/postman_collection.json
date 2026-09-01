@@ -1,0 +1,28 @@
+{
+  "info": {
+    "name": "AlışverişListesiUygulaması API",
+    "description": "Otomatik üretildi (agent-squad sprint_documenter). Backend dev_notes'undaki API kontratlarına göre — endpoint/method detaylarını Postman'da elle düzeltmen gerekebilir, bu bir başlangıç noktası.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "T-1 — Flask ile kullanıcı kaydı ve giriş için endpoint'ler tanımla",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5050",
+          "host": [
+            "http://localhost:5050"
+          ]
+        },
+        "description": "API kontratı: \n- GET '/' - Serve the main HTML file\n- POST '/register' - Register a new user with email and password\n- POST '/login' - Login an existing user with email and password\nHata mesajları: \n- 'Email and password are required' - When email or password is missing\n- 'Invalid email format' - When email format is incorrect\n- 'Email already exists' - When email is already registered\n- 'Invalid email or password' - When email or password is incorrect"
+      }
+    }
+  ]
+}

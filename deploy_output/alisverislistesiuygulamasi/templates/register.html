@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold mb-6">Register</h2>
+        <form id="registerForm" class="space-y-4">
+            <div class="flex flex-col">
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" id="email" name="email" class="mt-1 p-2 w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500" required>
+            </div>
+            <div class="flex flex-col">
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" id="password" name="password" class="mt-1 p-2 w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500" required>
+            </div>
+            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Kaydol</button>
+        </form>
+        <div id="registerMessage" class="text-red-500 mt-4"></div>
+    </div>
+</body>
+<script>
+    document.getElementById('registerForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        const response = await fetch('/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email, password })
+        });
+        const data = await response.json();
+        if (response.ok) {
+            document.getElementById('registerMessage').textContent = data.message;
+            form.reset();
+        } else {
+            document.getElementById('registerMessage').textContent = data.error;
+        }
+    });
+</script>
+</html>

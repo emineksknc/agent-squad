@@ -1,0 +1,7 @@
+API kontratlarý:
+- GET /tasks: Tüm görevleri listeler.
+- POST /tasks: Yeni bir görev oluþturur.
+- PUT /tasks/{task_id}: Belirli bir görevi günceller.
+- DELETE /tasks/{task_id}: Belirli bir görevi siler.
+
+Frontend'in ana HTML dosyasýný servis etmek için GET '/' route'unu ekleyin.

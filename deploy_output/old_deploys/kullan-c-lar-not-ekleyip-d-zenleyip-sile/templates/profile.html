@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesabým</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hesabým</h1>
+        <p>Merhaba, <span id="username"></span></p>
+        <form id="profileForm">
+            <div class="form-group">
+                <label for="username">Kullanýcý Adý:</label>
+                <input type="text" id="username" name="username" readonly>
+            </div>
+            <div class="form-group">
+                <label for="password">Þifre:</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div class="form-group">
+                <label for="newPassword">Yeni Þifre:</label>
+                <input type="password" id="newPassword" name="newPassword">
+            </div>
+            <button type="submit">Güncelle</button>
+        </form>
+        <button id="logoutButton">Hesabý Kapat</button>
+    </div>
+    <script src="profile.js"></script>
+</body>
+</html>

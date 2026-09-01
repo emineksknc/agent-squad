@@ -1,0 +1,66 @@
+{
+  "info": {
+    "name": "Görev Takip Uygulaması API",
+    "description": "Otomatik üretildi (agent-squad sprint_documenter). Backend dev_notes'undaki API kontratlarına göre — endpoint/method detaylarını Postman'da elle düzeltmen gerekebilir, bu bir başlangıç noktası.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "T-2 — FastAPI ile görev oluşturma, düzenleme ve silme işlemlerini ",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5050",
+          "host": [
+            "http://localhost:5050"
+          ]
+        },
+        "description": ""
+      }
+    },
+    {
+      "name": "T-1 — FastAPI ile kullanıcı kaydı ve giriş işlemlerini gerçekleşti",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5050",
+          "host": [
+            "http://localhost:5050"
+          ]
+        },
+        "description": "API kontratları:\n- POST /register: \n  - Request: { \"username\": \"string\", \"password\": \"string\" }\n  - Response: { \"message\": \"string\" }\n- POST /token: \n  - Request: { \"username\": \"string\", \"password\": \"string\" }\n  - Response: { \"access_token\": \"string\", \"token_type\": \"string\" }\n- POST /logout: \n  - Request: { \"Authorization\": \"Bearer token\" }\n  - Response: { \"message\": \"string\" }\n\nFrontend'in ana HTML dosyasını servis etmek için GET / route'unu eklendi: \n  - Response: HTML response for index.html file"
+      }
+    },
+    {
+      "name": "T-3 — FastAPI ile görev arama ve filtreleme işlemlerini gerçekleşt",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5050",
+          "host": [
+            "http://localhost:5050"
+          ]
+        },
+        "description": ""
+      }
+    }
+  ]
+}

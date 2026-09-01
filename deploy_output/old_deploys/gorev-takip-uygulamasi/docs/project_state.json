@@ -1,0 +1,122 @@
+{
+  "project_name": "Görev Takip Uygulaması",
+  "project_slug": "gorev-takip-uygulamasi",
+  "original_idea": "Görev takip uygulaması",
+  "product_vision": [
+    {
+      "feature": "Kullanıcı kaydı ve girişi",
+      "why": "Kullanıcı verileri için temel güvenlik"
+    },
+    {
+      "feature": "Görev oluşturma, düzenleme ve silme",
+      "why": "Kullanıcıların görevleri yönetme yeteneği"
+    },
+    {
+      "feature": "Görev arama/filtreleme",
+      "why": "Görev sayısı arttıkça bulunabilirlik kritikleşir"
+    },
+    {
+      "feature": "Görevlerin tamamlanma durumu",
+      "why": "Görevlerin durumunu izlemek için temel gereksinim"
+    },
+    {
+      "feature": "Görevlerin tarih ve zamanla ilişkilendirilmesi",
+      "why": "Görevlerin zamanlaması ve planlanması için"
+    },
+    {
+      "feature": "Görevlerin etiketlendirilmesi",
+      "why": "Görevleri daha kolay sınıflandırma ve filtreleme"
+    },
+    {
+      "feature": "Görevlerin önceliklendirilmesi",
+      "why": "Görevlerin önceliklendirilmesi ve sıralaması"
+    },
+    {
+      "feature": "Görevlerin paylaşılması",
+      "why": "Görevleri diğer kullanıcılarla paylaşmak ve işbirliği yapmak"
+    },
+    {
+      "feature": "Görevlerin belirli gruplara veya kişilere ataması",
+      "why": "Görevleri belirli kişilere veya gruplara yönlendirmek"
+    },
+    {
+      "feature": "Görevlerin belirli bir tarihe kadar beklemesi",
+      "why": "Görevlerin belirli bir süre boyunca beklemesi"
+    },
+    {
+      "feature": "Görevlerin belirli bir tarihe kadar hatırlatılması",
+      "why": "Görevlerin belirli bir tarihe kadar hatırlatılması"
+    },
+    {
+      "feature": "Görevlerin analitik ve raporlama",
+      "why": "Görevlerin performansını ve etkinliğini izlemek için"
+    },
+    {
+      "feature": "Görevlerin entegrasyonu",
+      "why": "Diğer araçlar ve sistemlerle entegre olmak"
+    },
+    {
+      "feature": "Görevlerin offline destek",
+      "why": "Kullanıcıların çevrimdışı durumlarda da görevleri yönetebilmesi"
+    }
+  ],
+  "completed_backlog": [
+    {
+      "id": "US-1",
+      "title": "Kullanıcı kaydı ve giriş",
+      "description": "Kullanıcılar bir hesap oluşturabilir, giriş yapabilir ve hesaplarını yönetebilir.",
+      "priority": "high",
+      "acceptance_criteria": [
+        "Kullanıcı hesapları otomatik olarak doğrulanmalı",
+        "Giriş yapma ve çıkış yapma yeteneği"
+      ]
+    },
+    {
+      "id": "US-2",
+      "title": "Görev oluşturma ve düzenleme",
+      "description": "Kullanıcılar yeni görevler oluşturabilir, mevcut görevleri düzenleyebilir ve görevleri silinebilir.",
+      "priority": "high",
+      "acceptance_criteria": [
+        "Görevlerin oluşturulması ve düzenlenmesi",
+        "Görevlerin silinmesi"
+      ]
+    },
+    {
+      "id": "US-3",
+      "title": "Görev arama ve filtreleme",
+      "description": "Kullanıcılar görevleri arayabilir ve filtreleyebilir.",
+      "priority": "medium",
+      "acceptance_criteria": [
+        "Görevlerin arama yeteneği",
+        "Görevlerin filtreleme yeteneği"
+      ]
+    }
+  ],
+  "future_backlog": [
+    {
+      "id": "US-5",
+      "title": "Görevlerin etiketlendirilmesi",
+      "description": "Kullanıcılar görevlerine etiketler ekleyebilir ve filtreleyebilir.",
+      "priority": "medium",
+      "acceptance_criteria": [
+        "Görevlerin etiketlendirme yeteneği",
+        "Etiketlerin filtreleme yeteneği"
+      ]
+    },
+    {
+      "id": "US-6",
+      "title": "Görevlerin önceliklendirilmesi",
+      "description": "Kullanıcılar görevlerin önceliklerini belirleyebilir ve görevlerin sıralamasını değiştirebilir.",
+      "priority": "medium",
+      "acceptance_criteria": [
+        "Görevlerin önceliklendirme yeteneği",
+        "Görevlerin sıralama yeteneği"
+      ]
+    }
+  ],
+  "tech_stack_decision": {
+    "choice": "FastAPI",
+    "frontend_choice": "HTML+Tailwind",
+    "reasoning": "Kullanıcı kaydı ve giriş, görev oluşturma ve düzenleme gibi işlemler için birden fazla CRUD endpoint'i gereklidir. Endpoint sayısı arttıkça ve karmaşıklaştıkça FastAPI daha uygun olacak. Veri doğrulama ihtiyacı yüksek ve kullanıcı girdisi validasyonu kritik olduğundan, otomatik veri doğrulama sağlayacak FastAPI tercih edilir. Frontend tarafında da basit formlar olduğu için HTML+Tailwind yeterli."
+  }
+}

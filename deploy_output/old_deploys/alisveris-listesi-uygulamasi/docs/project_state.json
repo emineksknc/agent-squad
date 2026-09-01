@@ -1,0 +1,93 @@
+{
+  "project_name": "Alışveriş Listesi Uygulaması",
+  "project_slug": "alisveris-listesi-uygulamasi",
+  "original_idea": "Alışveriş listesi uygulaması",
+  "product_vision": [
+    {
+      "feature": "Kullanıcı kaydı ve girişi",
+      "why": "Kullanıcı verilerini saklamak ve kullanıcı deneyimini kişiselleştirmek için"
+    },
+    {
+      "feature": "Alışveriş listesi oluşturma ve düzenleme",
+      "why": "Kullanıcıların alışveriş listelerini kolayca oluşturup düzenlemeleri için"
+    },
+    {
+      "feature": "Not ve etiket ekleme",
+      "why": "Kullanıcılar listelerine özel notlar ve etiketler ekleyerek daha fazla bilgi ekleyebilmesi için"
+    },
+    {
+      "feature": "Arama/filtreleme",
+      "why": "Listelerin büyüdükçe bulunabilirlik kritikleşmesi için"
+    },
+    {
+      "feature": "Kategorilere göre sıralama",
+      "why": "Kullanıcılar belirli ürünlerin veya etiketlerin altında listeleri kolayca bulunması için"
+    },
+    {
+      "feature": "Bildirimler",
+      "why": "Kullanıcıların listelerinde değişikliklerin fark edilmesi için"
+    },
+    {
+      "feature": "Paylaşım/sosyal özellikler",
+      "why": "Kullanıcılar listelerini arkadaşlarına veya aileye kolayca paylaşabilmesi için"
+    },
+    {
+      "feature": "Kişiselleştirme",
+      "why": "Kullanıcı deneyimini kişiselleştirmek ve daha fazla kullanıcıya ulaşmak için"
+    },
+    {
+      "feature": "Analitik/raporlama",
+      "why": "Kullanıcıların listelerinin performansını izlemek ve optimize etmek için"
+    },
+    {
+      "feature": "Entegrasyonlar",
+      "why": "Diğer alışveriş platformları ve uygulamalarla entegre olmak ve daha geniş bir kullanıcı tabanına ulaşmak için"
+    },
+    {
+      "feature": "Offline destek",
+      "why": "Kullanıcıların internet bağlantısı olmayan durumlarda da uygulamayı kullanabilmesi için"
+    }
+  ],
+  "completed_backlog": [
+    {
+      "id": "US-1",
+      "title": "Kullanıcı kaydı ve giriş",
+      "description": "Bir kullanıcı olarak, bir hesap oluşturmak veya mevcut bir hesabımı kullanmak istiyorum, böylece kişiselleştirilmiş verileri saklayabilirim ve daha iyi bir deneyim elde edebilirim.",
+      "priority": "high",
+      "acceptance_criteria": [
+        "Kullanıcı adı ve şifre ile kaydolma",
+        "E-posta ile kaydolma",
+        "Giriş yapma ve çıkış yapma"
+      ]
+    },
+    {
+      "id": "US-2",
+      "title": "Alışveriş listesi oluşturma ve düzenleme",
+      "description": "Bir kullanıcı olarak, alışveriş listelerim oluşturmak ve düzenlemek istiyorum, böylece belirli ürünlerimi kolayca toplayabilirim.",
+      "priority": "high",
+      "acceptance_criteria": [
+        "Liste oluşturma",
+        "Liste düzenleme",
+        "Liste silme"
+      ]
+    }
+  ],
+  "future_backlog": [
+    {
+      "id": "US-5",
+      "title": "Not ve etiket ekleme",
+      "description": "Bir kullanıcı olarak, alışveriş listelerimde notlar ve etiketler eklemek istiyorum, böylece daha fazla bilgi ekleyebilirim ve listelerimi daha kolay yönetebilirim.",
+      "priority": "medium",
+      "acceptance_criteria": [
+        "Not ekleme",
+        "Etiket ekleme",
+        "Not ve etiket silme"
+      ]
+    }
+  ],
+  "tech_stack_decision": {
+    "choice": "Flask",
+    "frontend_choice": "HTML+Tailwind",
+    "reasoning": "US-1 ve US-2 için basit CRUD endpoint'leri gereklidir, veri doğrulama ihtiyacı düşük. Frontend tarafında da basit formlar olduğu için Tailwind ile düz HTML yeterli, React'e gerek yok."
+  }
+}

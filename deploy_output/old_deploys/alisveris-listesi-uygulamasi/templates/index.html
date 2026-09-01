@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-2xl mx-auto p-6">
+        <h1 class="text-2xl font-bold mb-4">Shopping List</h1>
+        <div id="list-container" class="bg-white shadow-md rounded-lg p-6">
+            <form id="create-list-form" class="mb-4">
+                <label for="list-name" class="block text-gray-700">Liste Adý:</label>
+                <input type="text" id="list-name" class="w-full px-3 py-2 mt-1 border rounded" required>
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Ekle</button>
+            </form>
+            <ul id="list-items" class="list-disc pl-5">
+            </ul>
+        </div>
+        <script>
+            document.getElementById('create-list-form').addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const listName = document.getElementById('list-name').value;
+                if (!listName) {
+                    alert('Liste adý boþ býrakýlamaz.');
+                    return;
+                }
+                try {
+                    const response = await fetch('/list', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ name: listName })
+                    });
+                    if (response.ok) {
+                        alert('Liste baþarýyla oluþturuldu.');
+                        document.getElementById('list-name').value = '';
+                    } else {
+                        alert('Liste oluþturulýrken bir hata oluþtu.');
+                    }
+                } catch (error) {
+                    alert('Liste oluþturulurken bir hata oluþtu: ' + error.message);
+                }
+            });
+            document.getElementById('list-items').addEventListener('click', async (event) => {
+                if (event.target.tagName === 'LI') {
+                    const listId = event.target.dataset.id;
+                    try {
+                        const response = await fetch(`/list/${listId}`, {
+                            method: 'DELETE',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        });
+                        if (response.ok) {
+                            alert('Liste baþarýyla silindi.');
+                            event.target.remove();
+                        } else {
+                            alert('Liste silinirken bir hata oluþtu.');
+                        }
+                    } catch (error) {
+                        alert('Liste silinirken bir hata oluþtu: ' + error.message);
+                    }
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>
